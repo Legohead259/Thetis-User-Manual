@@ -2,17 +2,21 @@
 
 \begin{multicols}{2}
 
-The x-IMU3 is x-io Technologies' third generation \ac{IMU}.  It is a high-performance and versatile measurement device designed to accommodate a wide range of data logging and real-time applications including biomechanics, motion-capture, virtual reality, drones, robotics, and industrial.
+% The x-IMU3 is x-io Technologies' third generation \ac{IMU}.
+% It is a high-performance and versatile measurement device designed to accommodate a wide range of data logging and real-time applications including biomechanics, motion-capture, virtual reality, drones, robotics, and industrial.
+Thetis is a nine \ac{DOF} \ac{IMU} that is capable of reporting the acceleration, rotation rate, orientation, and position of a body.
+It was developed as part of a thesis project for the Ocean Engineering Department at the Florida Institute of Technology.
+The device is designed to be used in classroom and laboratory environments or out in the field, wherever inertial data logging is desired.
 
-\acs{USB}, Wi-Fi and Bluetooth provide connectivity for mobile and desktop devices while serial communication supports embedded and industrial systems.  An on-board \acs{microSD} allows the x-IMU3 to function as a stand-alone data logger with the ability to download files by USB and Wi-Fi.  Multiple x-IMU3s operating together on the same wireless network will automatically synchronise to stream or log synchronised measurements.
+Thetis can communicate with a host computer over a \acs{USB} or Wi-Fi connection, streaming data in real-time to an operator.
+For more embedded applications, Thetis has an on-board battery and \acs{microSD} card storage, allowing it to remotely data log without an operator.
+A simple user interface allows for a single operator to deploy Thetis in any condition.
 
 \textbf{Sensors}
 \begin{itemize}[nolistsep]
-    \item Gyroscope, \textpm{}2000\textdegree{}/s, 400 Hz
-    \item Accelerometer, \textpm{}24 g, 400 Hz
-    \item Magnetometer, \textpm{}2.5 uT, 20 Hz
-    \item High-g accelerometer, \textpm{}200 g, 1600 Hz
-    \item Temperature sensor\footnote{The temperature sensor is used for calibration and is not intended to provide an accurate measurement of ambient temperature.}
+    \item Gyroscope, \textpm{}2000\textdegree{}/s, 100 Hz
+    \item Accelerometer, \textpm{}32 g, 100 Hz
+    \item Magnetometer, \textpm{}16 gauss, 100 Hz
 \end{itemize}
 
 \textbf{Calibration}
@@ -27,18 +31,18 @@ The x-IMU3 is x-io Technologies' third generation \ac{IMU}.  It is a high-perfor
     \item Algorithm outputs:
     \begin{itemize}
         \item Quaternion
-        \item Rotation matrix
+        \item Rotation matrix\footnote{Supported, but not yet implemented.}
         \item Euler angles
-        \item Linear acceleration
-        \item Earth acceleration
+        \item Linear acceleration\footnotemark[\value{footnote}]
+        \item Earth acceleration\footnotemark[\value{footnote}]
     \end{itemize}
-    \item Linear acceleration rejection
-    \item Magnetic distortion rejection
-    \item 400 Hz update rate
+    \item Linear acceleration rejection\footnotemark[\value{footnote}]
+    \item Magnetic distortion rejection\footnotemark[\value{footnote}]
+    \item 100 Hz update rate
     \item Static accuracy:
         \begin{itemize}
-            \item 0.5\textdegree{} \acs{RMS} inclination
-            \item 1\textdegree{} \acs{RMS} heading
+            \item 0.5\textdegree{} \acs{RMS} inclination\footnote{Remains to be validated.}
+            \item 1\textdegree{} \acs{RMS} heading\footnotemark[\value{footnote}]
         \end{itemize}
 \end{itemize}
 
@@ -47,53 +51,43 @@ The x-IMU3 is x-io Technologies' third generation \ac{IMU}.  It is a high-perfor
 \textbf{Communication}
 \begin{itemize}[nolistsep]
     \item \acs{USB} (\acs{CDC})
-    \item Serial, 3.3V \acs{UART}
-    \item \acs{TCP} (Wi-Fi)
+    \item \acs{TCP} (Wi-Fi)\footnotemark[\numexpr\value{footnote}-1\relax]
     \item \acs{UDP} (Wi-Fi)
-    \item Bluetooth\footnote{Bluetooth connectivity is currently in development and not yet supported.}
 \end{itemize}
 
 \textbf{Wi-Fi}
 \begin{itemize}[nolistsep]
     \item Client and \acs{AP} mode
-    \item Dual band (2.4 GHz, 5 GHz)
+    \item Single band (2.4 GHz)
     \item WPA/WPA2-Personal
-    \item WPA/WPA2-Enterprise\footnote{WPA/WPA2-Enterprise security is currently in development and not yet supported. Will only be supported in client mode.}
 \end{itemize}
 
 \textbf{Data logging}
 \begin{itemize}[nolistsep]
-    \item Supports \acsp{microSD} up to 32 GB\footnote{The product is supplied with an 8 GB \acs{microSD} that can be upgraded by the user.}
-    \item Start/stop logging remotely
-    \item USB download
+    \item Supports \acsp{microSD} up to 32 GB\footnote{The product is supplied with an 4 GB \acs{microSD} that can be upgraded by the user.}
+    \item Start/stop logging remotely\footnotemark[\numexpr\value{footnote}-2\relax]
+    \item Start/stop logging with physical button
+    \item USB download\footnote{USB downloading is currently in development and not yet supported.}
     \item Wi-Fi download\footnote{Wi-Fi downloading is currently in development and not yet supported.}
     \item \acs{CSV} output
-\end{itemize}
-
-\textbf{Serial accessories}
-\begin{itemize}[nolistsep]
-    \item Receive data from external sensors and user electronics, e.g. \acs{GPS}, analogue/digital inputs, application-specific sensors.
-    \item 3.3 V output to power external electronics
 \end{itemize}
 
 \textbf{Battery}
 \begin{itemize}[nolistsep]
     \item Internal battery charged by \acs{USB}
-    \item 20 hours data logging
-    \item 15 hours Bluetooth
-    \item 12 hours Wi-Fi client 2.4 GHz
-    \item 8 hours Wi-Fi client 5 GHz
+    \item 9 hours data logging\footnote{Estimated}
+    \item 4 hours Wi-Fi client\footnote{Estimated, assuming constant transmission.}
 \end{itemize}
 
 \textbf{Housing}
 \begin{itemize}[nolistsep]
     \item \acs{IP67}
-    \item Wearable strap or chassis mount
+    \item Chassis mount via two M3 screws or bolts
 \end{itemize}
 
 \textbf{Software \acs{GUI}}
 \begin{itemize}[nolistsep]
-    \item Connect to multiple x-IMU3s
+    \item Connect to multiple xio-compatible \acsp{IMU} (e.g. x-IMU3, Thetis)
     \item Real-time data graphs and 3D view
     \item Log data to \acs{CSV}
     \item Windows, macOS, Ubuntu
