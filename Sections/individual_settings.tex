@@ -5,7 +5,7 @@
     \def\tempLabel{sec:calibrationDate}
     \def\tempDescription
     {
-        Calibration date.  \seeSection{sec:calibration}
+        Calibration date.
     }
     \def\tempKey{calibrationDate}
     \def\tempType{string}
@@ -13,18 +13,51 @@
     \deviceSetting
 \endgroup
 
-\newcommand{\inertialMisalignmentDescription}[1] {#1 misalignment matrix (in row-major order) used for inertial sensor calibration.  \seeSection{sec:inertialSensor}}
+\begingroup
+    \def\tempSection{System clock calibration (read-only)}
+    \def\tempLabel{sec:systemClockCalibration}
+    \def\tempDescription
+    {
+        System clock calibration.
+    }
+    \def\tempKey{systemClockCalibration}
+    \def\tempType{number}
+    \def\tempDefault{1.0}
+    \deviceSetting
+\endgroup
 
-\newcommand{\inertialSensitivityDescription}[1] {#1 sensitivity vector used for inertial sensor calibration.  \seeSection{sec:inertialSensor}}
+\begingroup
+    \def\tempSection{\acs{RTC} calibration (read-only)}
+    \def\tempLabel{sec:rtcCalibration}
+    \def\tempDescription
+    {
+        \ac{RTC} calibration.
+    }
+    \def\tempKey{rtcCalibration}
+    \def\tempType{number}
+    \def\tempDefault{1.0}
+    \deviceSetting
+\endgroup
 
-\newcommand{\inertialOffsetDescription}[1] {#1 offset vector used for inertial sensor calibration.  \seeSection{sec:inertialSensor}}
+\begingroup
+    \def\tempSection{Battery voltmeter sensitivity (read-only)}
+    \def\tempLabel{sec:batteryVoltmeterSensitivity}
+    \def\tempDescription
+    {
+        Battery voltmeter sensitivity.
+    }
+    \def\tempKey{batteryVoltmeterSensitivity}
+    \def\tempType{number}
+    \def\tempDefault{1.0}
+    \deviceSetting
+\endgroup
 
 \begingroup
     \def\tempSection{Gyroscope misalignment (read-only)}
     \def\tempLabel{sec:gyroscopeMisalignment}
     \def\tempDescription
     {
-        \inertialMisalignmentDescription{Gyroscope}
+        Gyroscope misalignment.
     }
     \def\tempKey{gyroscopeMisalignment}
     \def\tempType{array of 9 numbers}
@@ -37,7 +70,7 @@
     \def\tempLabel{sec:gyroscopeSensitivity}
     \def\tempDescription
     {
-        \inertialSensitivityDescription{Gyroscope}
+        Gyroscope sensitivity.
     }
     \def\tempKey{gyroscopeSensitivity}
     \def\tempType{array of 3 numbers}
@@ -50,7 +83,7 @@
     \def\tempLabel{sec:gyroscopeOffset}
     \def\tempDescription
     {
-        \inertialOffsetDescription{Gyroscope}
+        Gyroscope offset.
     }
     \def\tempKey{gyroscopeOffset}
     \def\tempType{array of 3 numbers}
@@ -63,7 +96,7 @@
     \def\tempLabel{sec:accelerometerMisalignment}
     \def\tempDescription
     {
-        \inertialMisalignmentDescription{Accelerometer}
+        Accelerometer misalignment.
     }
     \def\tempKey{accelerometerMisalignment}
     \def\tempType{array of 9 numbers}
@@ -76,7 +109,7 @@
     \def\tempLabel{sec:accelerometerSensitivity}
     \def\tempDescription
     {
-        \inertialSensitivityDescription{Accelerometer}
+        Accelerometer sensitivity.
     }
     \def\tempKey{accelerometerSensitivity}
     \def\tempType{array of 3 numbers}
@@ -89,7 +122,7 @@
     \def\tempLabel{sec:accelerometerOffset}
     \def\tempDescription
     {
-        \inertialOffsetDescription{Accelerometer}
+        Accelerometer offset.
     }
     \def\tempKey{accelerometerOffset}
     \def\tempType{array of 3 numbers}
@@ -102,7 +135,7 @@
     \def\tempLabel{sec:softIronMatrix}
     \def\tempDescription
     {
-        Soft iron matrix (in row-major order) used for magnetometer calibration.  \seeSection{sec:magnetometer}
+        Soft iron matrix.
     }
     \def\tempKey{softIronMatrix}
     \def\tempType{array of 9 numbers}
@@ -115,7 +148,7 @@
     \def\tempLabel{sec:hardIronOffset}
     \def\tempDescription
     {
-        Hard iron offset vector used for magnetometer calibration.  \seeSection{sec:magnetometer}
+        Hard iron offset.
     }
     \def\tempKey{hardIronOffset}
     \def\tempType{array of 3 numbers}
@@ -128,7 +161,7 @@
     \def\tempLabel{sec:highGAccelerometerMisalignment}
     \def\tempDescription
     {
-        \inertialMisalignmentDescription{High-g accelerometer}
+        High-g accelerometer misalignment.
     }
     \def\tempKey{highGAccelerometerMisalignment}
     \def\tempType{array of 9 numbers}
@@ -141,7 +174,7 @@
     \def\tempLabel{sec:highGAccelerometerSensitivity}
     \def\tempDescription
     {
-        \inertialSensitivityDescription{High-g accelerometer}
+        High-g accelerometer sensitivity.
     }
     \def\tempKey{highGAccelerometerSensitivity}
     \def\tempType{array of 3 numbers}
@@ -154,7 +187,7 @@
     \def\tempLabel{sec:highGAccelerometerOffset}
     \def\tempDescription
     {
-        \inertialOffsetDescription{High-g accelerometer}
+        High-g accelerometer offset.
     }
     \def\tempKey{highGAccelerometerOffset}
     \def\tempType{array of 3 numbers}
@@ -167,7 +200,7 @@
     \def\tempLabel{sec:deviceName}
     \def\tempDescription
     {
-        User-defined device name up to 31 characters long.
+        Device name.
     }
     \def\tempKey{deviceName}
     \def\tempType{string}
@@ -180,7 +213,7 @@
     \def\tempLabel{sec:serialNumber}
     \def\tempDescription
     {
-        Unique 64-bit serial number expressed as a string of 16 hexadecimal digits in the format \enquote{XXXX-XXXX-XXXX-XXXX}.
+        Serial number.
     }
     \def\tempKey{serialNumber}
     \def\tempType{string}
@@ -310,19 +343,7 @@
     \def\tempLabel{sec:wirelessMode}
     \def\tempDescription
     {
-        Configures the wireless mode.  The possible values are listed in \Fref{tab:wirelessModes}.  The current wireless mode is indicated by the \ac{LED} colour.  \seeSection{sec:led}
-
-        \customTable
-        {c l}
-        {Value & Mode}
-        {
-            0 & Disabled\\
-            1 & Wi-Fi client\\
-            2 & Wi-Fi \acs{AP}\\
-            3 & Bluetooth\\
-        }
-        {Wireless modes}
-        {tab:wirelessModes}
+        Wireless mode.
     }
     \def\tempKey{wirelessMode}
     \def\tempType{number}
@@ -335,7 +356,7 @@
     \def\tempLabel{sec:wirelessFirmwareVersion}
     \def\tempDescription
     {
-        Current wireless firmware version.
+        Wireless firmware version.
     }
     \def\tempKey{wirelessFirmwareVersion}
     \def\tempType{string}
@@ -348,7 +369,7 @@
     \def\tempLabel{sec:externalAntennaeEnabled}
     \def\tempDescription
     {
-        Enables (true) or disables (false) the external antennae.  An antennae must be connected to the U.FL connector if the external antennae is enabled.  The internal antennae will be used if the external antennae is disabled.
+        External antennae enabled.
     }
     \def\tempKey{externalAntennaeEnabled}
     \def\tempType{true or false}
@@ -361,18 +382,7 @@
     \def\tempLabel{sec:wiFiRegion}
     \def\tempDescription
     {
-        Configures the region for Wi-Fi operation.  The x-IMU3 will operate according to the regulations of the selected region.  See \Fref{sec:wiFiClientSsid} for a list of channels available in each region.  The possible values are listed in \Fref{tab:wiFiRegions}.
-
-        \customTable
-        {c l}
-        {Value & Region}
-        {
-            1 & \ac{US}\\
-            2 & \ac{EU}\\
-            3 & \ac{JP}\\
-        }
-        {Wi-Fi regions}
-        {tab:wiFiRegions}
+        Wi-Fi region.
     }
     \def\tempKey{wiFiRegion}
     \def\tempType{number}
@@ -398,7 +408,7 @@
     \def\tempLabel{sec:wiFiIPAddress}
     \def\tempDescription
     {
-        Current \ac{IP} address of the x-IMU3.  A value of 0.0.0.0 indicates that the x-IMU3 does not yet have an \ac{IP} address.
+        Wi-Fi \ac{IP} address.
     }
     \def\tempKey{wiFiIPAddress}
     \def\tempType{string}
@@ -411,7 +421,7 @@
     \def\tempLabel{sec:wiFiClientSsid}
     \def\tempDescription
     {
-        Configures the \ac{SSID} in Wi-Fi client mode.  This is the name of the router that the x-IMU3 will connect to.  The \ac{SSID} may be up to 31 characters long.  If the \ac{SSID} is left blank then the x-IMU3 will use the \ac{SSID} \enquote{x-IMU3 Network}.
+        Wi-Fi client \ac{SSID}.
     }
     \def\tempKey{wiFiClientSsid}
     \def\tempType{string}
@@ -424,7 +434,7 @@
     \def\tempLabel{sec:wiFiClientKey}
     \def\tempDescription
     {
-        Configures the security key in Wi-Fi client mode.  This is the password for the router that the x-IMU3 will connect to.  If the router does not require a password then this setting will be ignored.  The key must be between 8 and 31 characters long.  If the key is left blank then the x-IMU3 will use the key \enquote{xiotechnologies}.
+        Wi-Fi client key.
     }
     \def\tempKey{wiFiClientKey}
     \def\tempType{string}
@@ -437,24 +447,7 @@
     \def\tempLabel{sec:wiFiClientChannel}
     \def\tempDescription
     {
-        Configures the channel in Wi-Fi client mode.  This is the channel of the router that the x-IMU3 will connect to.  Setting the correct channel will decrease the time taken to connect.  If the channel is incorrect then the x-IMU3 will search all channels and then update this setting for the correct channel.  The possible channels are listed in \Fref{tab:wiFiClientChannels}.
-
-        \customTable
-        {c c l}
-        {Channel & Band & Notes}
-        {
-            0 & - & All channels\\
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 & 2.4 GHz & -\\
-            12, 13 & 2.4 GHz & Invalid for \acs{US}\\
-            14 & 2.4 GHz & Invalid for \acs{US} and \acs{EU}\\
-            36, 40, 44, 48 & 5 GHz & -\\
-            52, 56, 60, 64, 100, 104, 108, 112, 116 & 5 GHz, \acs{DFS} & -\\
-            120, 124, 128 & 5 GHz, \acs{DFS} & Invalid for \acs{US}\\
-            132, 136, 140 & 5 GHz, \acs{DFS} & -\\
-            149, 153, 157, 161, 165 & 5 GHz & Invalid for \acs{EU} and \acs{JP}\\
-        }
-        {Wi-Fi client channels}
-        {tab:wiFiClientChannels}
+        Wi-Fi client channel.
     }
     \def\tempKey{wiFiClientChannel}
     \def\tempType{number}
@@ -467,7 +460,7 @@
     \def\tempLabel{sec:wiFiClientDhcpEnabled}
     \def\tempDescription
     {
-        Enables (true) or disables (false) \ac{DHCP} in Wi-Fi client mode.  If \ac{DHCP} is enabled then the x-IMU3 will be assigned an \ac{IP} address by the router.  This is an automatic process and the recommend mode of operation.  If \ac{DHCP} is disabled then the \ac{IP} address, netmask, and gateway must be configured by the user.
+        Wi-Fi client \ac{DHCP} enabled.
     }
     \def\tempKey{wiFiClientDhcpEnabled}
     \def\tempType{true or false}
@@ -480,7 +473,7 @@
     \def\tempLabel{sec:wiFiClientIPAddress}
     \def\tempDescription
     {
-        Configures the x-IMU3 \ac{IP} address in Wi-Fi client mode when \ac{DHCP} is disabled.  This setting will be ignored if \ac{DHCP} is enabled.
+        Wi-Fi client \ac{IP} address.
     }
     \def\tempKey{wiFiClientIPAddress}
     \def\tempType{string}
@@ -493,7 +486,7 @@
     \def\tempLabel{sec:wiFiClientNetmask}
     \def\tempDescription
     {
-        Configures the netmask in Wi-Fi client mode when \ac{DHCP} is disabled.  This setting will be ignored if \ac{DHCP} is enabled.
+        Wi-Fi client netmask.
     }
     \def\tempKey{wiFiClientNetmask}
     \def\tempType{string}
@@ -506,7 +499,7 @@
     \def\tempLabel{sec:wiFiClientGateway}
     \def\tempDescription
     {
-        Configures the gateway in Wi-Fi client mode when \ac{DHCP} is disabled.  This setting will be ignored if \ac{DHCP} is enabled.
+        Wi-Fi client gateway.
     }
     \def\tempKey{wiFiClientGateway}
     \def\tempType{string}
@@ -519,7 +512,7 @@
     \def\tempLabel{sec:wiFiAPSsid}
     \def\tempDescription
     {
-		Configures the \ac{SSID} of the x-IMU3 in Wi-Fi \ac{AP} mode.  This is the name of the network created by the x-IMU3.  The \ac{SSID} may be up to 31 characters long.  If the \ac{SSID} is left blank then the x-IMU3 will use the \ac{SSID} \enquote{x-IMU3}.
+        Wi-Fi \ac{AP} \ac{SSID}.
     }
     \def\tempKey{wiFiAPSsid}
     \def\tempType{string}
@@ -532,7 +525,7 @@
     \def\tempLabel{sec:wiFiAPKey}
     \def\tempDescription
     {
-		Configures the security key in Wi-Fi \ac{AP} mode.  This is the password required to connect to the network created by the x-IMU3.  The key must be between 8 and 31 characters long.  If the key is left blank then the network will not use security and a password would not be required to connect to the x-IMU3.
+        Wi-Fi \ac{AP} key.
     }
     \def\tempKey{wiFiAPKey}
     \def\tempType{string}
@@ -545,20 +538,7 @@
     \def\tempLabel{sec:wiFiAPChannel}
     \def\tempDescription
     {
-        Configures the channel of the x-IMU3 in Wi-Fi \ac{AP} mode.  This is the channel of the network created by the x-IMU3.  The possible channels are listed in \Fref{tab:wiFiAPChannels}.
-
-        \customTable
-        {c c l}
-        {Channel & Band & Notes}
-        {
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 & 2.4 GHz & -\\
-            12, 13 & 2.4 GHz & Invalid for \acs{US}\\
-            14 & 2.4 GHz & Invalid for \acs{US} and \acs{EU}\\
-            36, 40, 44, 48 & 5 GHz & -\\
-            149, 153, 157, 161, 165 & 5 GHz & Invalid for \acs{EU} and \acs{JP}\\
-        }
-        {Wi-Fi \acs{AP} channels}
-        {tab:wiFiAPChannels}
+        Wi-Fi \ac{AP} channel.
     }
     \def\tempKey{wiFiAPChannel}
     \def\tempType{number}
@@ -571,11 +551,11 @@
     \def\tempLabel{sec:wiFiAPIPAddress}
     \def\tempDescription
     {
-        Configures the x-IMU3 \ac{IP} address in Wi-Fi \ac{AP} mode
+        Wi-Fi \ac{AP} \ac{IP} address.
     }
     \def\tempKey{wiFiAPIPAddress}
     \def\tempType{string}
-    \def\tempDefault{\enquote{192.169.1.1}}
+    \def\tempDefault{0x0101A9C0}
     \deviceSetting
 \endgroup
 
@@ -597,11 +577,11 @@
     \def\tempLabel{sec:udpIPAddress}
     \def\tempDescription
     {
-        Configures the \ac{IP} address that the x-IMU3 will send to.  This should be the \ac{IP} address of the host.  If the \ac{IP} address is \enquote{0.0.0.0} then the x-IMU3 will send to the source \ac{IP} address of the most recent \ac{UDP} packet received by the x-IMU3.
+        \ac{UDP} \ac{IP} address.
     }
     \def\tempKey{udpIPAddress}
     \def\tempType{string}
-    \def\tempDefault{\enquote{0.0.0.0}}
+    \def\tempDefault{0}
     \deviceSetting
 \endgroup
 
@@ -610,7 +590,7 @@
     \def\tempLabel{sec:udpSendPort}
     \def\tempDescription
     {
-        Configures the \ac{UDP} port that the x-IMU3 will send to.  This is the port that a host should listen to.  If the port is 0 then the x-IMU3 will send to the source port of the most recent \ac{UDP} packet received by the x-IMU3.
+        \ac{UDP} send port.
     }
     \def\tempKey{udpSendPort}
     \def\tempType{number}
@@ -623,7 +603,7 @@
     \def\tempLabel{sec:udpReceivePort}
     \def\tempDescription
     {
-        Configures the \ac{UDP} port that the x-IMU3 will listen to.  This is the port that a host should send to.
+        \ac{UDP} receive port.
     }
     \def\tempKey{udpReceivePort}
     \def\tempType{number}
@@ -636,7 +616,7 @@
     \def\tempLabel{sec:udpLowLatency}
     \def\tempDescription
     {
-        Enables (true) or disables (false) low latency \ac{UDP} performance.  Enabling low latency \ac{UDP} performance will typically result in each data message being sent as a single \ac{UDP} packet.  This provides the best possible latency performance but will significantly limit the maximum throughput and number of devices able to stream on the same network.  It is recommended that low latency \ac{UDP} performance is disabled for most applications.
+        \ac{UDP} low latency.
     }
     \def\tempKey{udpLowLatency}
     \def\tempType{true or false}
@@ -649,7 +629,7 @@
     \def\tempLabel{sec:synchronisationEnabled}
     \def\tempDescription
     {
-        Enables (true) or disables (false) synchronisation.  \seeSection{sec:synchronisation}
+        Synchronisation enabled.
     }
     \def\tempKey{synchronisationEnabled}
     \def\tempType{true or false}
@@ -662,7 +642,7 @@
     \def\tempLabel{sec:synchronisationNetworkLatency}
     \def\tempDescription
     {
-        The network latency (in microseconds) used by the synchronisation algorithm.
+        Synchronisation network latency.
     }
     \def\tempKey{synchronisationNetworkLatency}
     \def\tempType{number}
@@ -675,7 +655,7 @@
     \def\tempLabel{sec:bluetoothAddress}
     \def\tempDescription
     {
-        x-IMU3 Bluetooth address.
+        Bluetooth address.
     }
     \def\tempKey{bluetoothAddress}
     \def\tempType{number}
@@ -688,7 +668,7 @@
     \def\tempLabel{sec:bluetoothName}
     \def\tempDescription
     {
-        Configures the name of the x-IMU3 in Bluetooth mode. The name may be up to 31 characters long. If the name is left blank then the x-IMU3 will use the name \enquote{x-IMU3}.
+        Bluetooth name.
     }
     \def\tempKey{bluetoothName}
     \def\tempType{string}
@@ -701,7 +681,7 @@
     \def\tempLabel{sec:bluetoothPinCode}
     \def\tempDescription
     {
-        Configures the Bluetooth pin code.  The pin code may be up to 15 characters long.  If the pin code is left blank then the x-IMU3 will use the name \enquote{1234}.
+        Bluetooth pin code.
     }
     \def\tempKey{bluetoothPinCode}
     \def\tempType{string}
@@ -714,18 +694,7 @@
     \def\tempLabel{sec:bluetoothDiscoveryMode}
     \def\tempDescription
     {
-        Configures the Bluetooth discovery mode.  The possible values are listed in \Fref{tab:bluetoothDiscoveryModes}.
-
-        \customTable
-        {c l}
-        {Value & Mode}
-        {
-            0 & Disabled\\
-            1 & Enabled\\
-            2 & Limited\\
-        }
-        {Bluetooth discovery modes}
-        {tab:bluetoothDiscoveryModes}
+        Bluetooth discovery mode.
     }
     \def\tempKey{bluetoothDiscoveryMode}
     \def\tempType{number}
@@ -738,7 +707,7 @@
     \def\tempLabel{sec:bluetoothPairedAddress}
     \def\tempDescription
     {
-        Bluetooth address of the device paired with the x-IMU3.
+        Bluetooth paired address.
     }
     \def\tempKey{bluetoothPairedAddress}
     \def\tempType{number}
@@ -751,7 +720,7 @@
     \def\tempLabel{sec:bluetoothPairedLinkKey}
     \def\tempDescription
     {
-        Bluetooth link key of device paired with the x-IMU3.
+        Bluetooth paired link key.
     }
     \def\tempKey{bluetoothPairedLinkKey}
     \def\tempType{number}
@@ -764,7 +733,7 @@
     \def\tempLabel{sec:dataLoggerEnabled}
     \def\tempDescription
     {
-        Enables (true) or disables (false) the data logger.  \seeSection{sec:dataLogger}
+        Data logger enabled.
     }
     \def\tempKey{dataLoggerEnabled}
     \def\tempType{true or false}
@@ -777,7 +746,7 @@
     \def\tempLabel{sec:dataLoggerFileNamePrefix}
     \def\tempDescription
     {
-        Configures the prefix part of the file name used by the data logger.  \seeSection{sec:fileName}
+        Data logger file name prefix.
     }
     \def\tempKey{dataLoggerFileNamePrefix}
     \def\tempType{string}
@@ -790,7 +759,7 @@
     \def\tempLabel{sec:dataLoggerFileNameTimeEnabled}
     \def\tempDescription
     {
-        Enables (true) or disables (false) the time part of the file name used by the data logger.  \seeSection{sec:fileName}
+        Data logger file name time enabled.
     }
     \def\tempKey{dataLoggerFileNameTimeEnabled}
     \def\tempType{true or false}
@@ -803,7 +772,7 @@
     \def\tempLabel{sec:dataLoggerFileNameCounterEnabled}
     \def\tempDescription
     {
-        Enables (true) or disables (false) the counter part of the file name used by the data logger.  \seeSection{sec:fileName}
+        Data logger file name counter enabled.
     }
     \def\tempKey{dataLoggerFileNameCounterEnabled}
     \def\tempType{true or false}
@@ -816,7 +785,7 @@
     \def\tempLabel{sec:dataLoggerMaxFileSize}
     \def\tempDescription
     {
-        Configures the the maximum size (in MB) of files created by the data logger.  A value of zero will configure the maximum file size supported by \ac{FAT32} (4 GB).  \seeSection{sec:maximumFileSizeAndPeriod}
+        Data logger max file size.
     }
     \def\tempKey{dataLoggerMaxFileSize}
     \def\tempType{number}
@@ -829,7 +798,7 @@
     \def\tempLabel{sec:dataLoggerMaxFilePeriod}
     \def\tempDescription
     {
-        Configures the the maximum period (in seconds) of files created by the data logger.  A value of zero will configure an unlimited period.  \seeSection{sec:maximumFileSizeAndPeriod}
+        Data logger max file period.
     }
     \def\tempKey{dataLoggerMaxFilePeriod}
     \def\tempType{number}
@@ -842,39 +811,7 @@
     \def\tempLabel{sec:axesAlignment}
     \def\tempDescription
     {
-        Axes alignment describing the sensor axes relative to the body axes. For example, if the body X axis is aligned with the sensor Y axis and the body Y axis is aligned with sensor X axis but pointing the opposite direction then alignment is +Y-X+Z.  The possible values are listed in \Fref{tab:axesAlignments}.
-
-        \customTable
-        {c l}
-        {Value & Axes alignment}
-        {
-            0 & +X+Y+Z\\
-            1 & +X-Z+Y\\
-            2 & +X-Y-Z\\
-            3 & +X+Z-Y\\
-            4 & -X+Y-Z\\
-            5 & -X+Z+Y\\
-            6 & -X-Y+Z\\
-            7 & -X-Z-Y\\
-            8 & +Y-X+Z\\
-            9 & +Y-Z-X\\
-            10 & +Y+X-Z\\
-            11 & +Y+Z+X\\
-            12 & -Y+X+Z\\
-            13 & -Y-Z+X\\
-            14 & -Y-X-Z\\
-            15 & -Y+Z-X\\
-            16 & +Z+Y-X\\
-            17 & +Z+X+Y\\
-            18 & +Z-Y+X\\
-            19 & +Z-X-Y\\
-            20 & -Z+Y+X\\
-            21 & -Z-X+Y\\
-            22 & -Z-Y-X\\
-            23 & -Z+X-Y\\
-        }
-        {Axes alignments}
-        {tab:axesAlignments}
+        Axes alignment.
     }
     \def\tempKey{axesAlignment}
     \def\tempType{number}
@@ -900,17 +837,7 @@
     \def\tempLabel{sec:ahrsAxesConvention}
     \def\tempDescription
     {
-        Configures  the Earth axes convention used by the \ac{AHRS} algorithm.  The possible values are listed in \Fref{tab:axesConventions}.
-        \customTable
-        {c l}
-        {Value & Axes Convention}
-        {
-            0 & North-West-Up (NWU)\\
-            1 & East-North-Up (ENU)\\
-            2 & North-East-Down (NED)\\
-        }
-        {Axes conventions}
-        {tab:axesConventions}
+        \ac{AHRS} axes convention.
     }
     \def\tempKey{ahrsAxesConvention}
     \def\tempType{number}
@@ -975,7 +902,7 @@
     \def\tempLabel{sec:binaryModeEnabled}
     \def\tempDescription
     {
-		Enables (true) or disables (false) binary data messages.  If binary data messages are disabled then data messages will be \ac{ASCII}.  \seeSection{sec:dataMessages}
+        Binary mode enabled.
     }
     \def\tempKey{binaryModeEnabled}
     \def\tempType{true or false}
@@ -988,7 +915,7 @@
     \def\tempLabel{sec:usbDataMessagesEnabled}
     \def\tempDescription
     {
-        Enables (true) or disables (false) the sending of data messages for the \ac{USB} communication interface.  The sending of notification and error messages cannot be disabled.
+        \ac{USB} data messages enabled.
     }
     \def\tempKey{usbDataMessagesEnabled}
     \def\tempType{true or false}
@@ -1001,7 +928,7 @@
     \def\tempLabel{sec:serialDataMessagesEnabled}
     \def\tempDescription
     {
-        Enables (true) or disables (false) the sending of data messages for the serial communication interface when it is in normal mode.  The sending of notification and error messages cannot be disabled.
+        Serial data messages enabled.
     }
     \def\tempKey{serialDataMessagesEnabled}
     \def\tempType{true or false}
@@ -1014,7 +941,7 @@
     \def\tempLabel{sec:tcpDataMessagesEnabled}
     \def\tempDescription
     {
-        Enables (true) or disables (false) the sending of data messages for the \ac{TCP} communication interface.  The sending of notification and error messages cannot be disabled.
+        \ac{TCP} data messages enabled.
     }
     \def\tempKey{tcpDataMessagesEnabled}
     \def\tempType{true or false}
@@ -1027,7 +954,7 @@
     \def\tempLabel{sec:udpDataMessagesEnabled}
     \def\tempDescription
     {
-        Enables (true) or disables (false) the sending of data messages for the \ac{UDP} communication interface.  The sending of notification and error messages cannot be disabled.
+        \ac{UDP} data messages enabled.
     }
     \def\tempKey{udpDataMessagesEnabled}
     \def\tempType{true or false}
@@ -1053,7 +980,7 @@
     \def\tempLabel{sec:dataLoggerDataMessagesEnabled}
     \def\tempDescription
     {
-        Enables (true) or disables (false) the sending of data messages for the on-board data logging.  The sending of notification and error messages cannot be disabled.
+        Data logger data messages enabled.
     }
     \def\tempKey{dataLoggerDataMessagesEnabled}
     \def\tempType{true or false}
@@ -1066,20 +993,7 @@
     \def\tempLabel{sec:ahrsMessageType}
     \def\tempDescription
     {
-        Configures the \ac{AHRS} message type.  The possible values are listed in \Fref{tab:ahrsMessageTypes}.
-
-        \customTable
-        {c l}
-        {Value & Message type}
-        {
-            0 & Quaternion\\
-            1 & Rotation matrix\\
-            2 & Euler angles\\
-            3 & Linear acceleration\\
-            4 & Earth acceleration\\
-        }
-        {\ac{AHRS} message types}
-        {tab:ahrsMessageTypes}
+        \ac{AHRS} message type.
     }
     \def\tempKey{ahrsMessageType}
     \def\tempType{number}
@@ -1087,37 +1001,12 @@
     \deviceSetting
 \endgroup
 
-\newcommand{\messageRateDivisorDescription}[6]
-{
-    Configures the #1 message rate as the fixed sample of #2 Hz divided by the the message rate divisor.  A message rate divisor of zero will disable the messages.  Example message rates are listed in \Fref{#6}.  See \Fref{sec:sampleRatesMessageRatesAndTimestamps} for more information about messages rates.
-
-    \customTable
-    {c c}
-    {Divisor & Message rate}
-    {
-        0 & Disabled\\
-        1 & #2 messages/s\\
-        2 & #3 messages/s\\
-        3 & #4 messages/s\\
-        4 & #5 messages/s\\
-        ... & ...\\
-    }
-    {Example #1 message rates}
-    {#6}
-}
-
 \begingroup
     \def\tempSection{Inertial message rate divisor}
     \def\tempLabel{sec:inertialMessageRateDivisor}
     \def\tempDescription
     {
-        \messageRateDivisorDescription
-        {inertial}
-        {400}
-        {200}
-        {133.33}
-        {100}
-        {tab:exampleInertialMessageRates}
+        Inertial message rate divisor.
     }
     \def\tempKey{inertialMessageRateDivisor}
     \def\tempType{number}
@@ -1130,13 +1019,7 @@
     \def\tempLabel{sec:magnetometerMessageRateDivisor}
     \def\tempDescription
     {
-        \messageRateDivisorDescription
-        {magnetometer}
-        {20}
-        {10}
-        {6.67}
-        {5}
-        {tab:exampleMagnetometerMessageRates}
+        Magnetometer message rate divisor.
     }
     \def\tempKey{magnetometerMessageRateDivisor}
     \def\tempType{number}
@@ -1149,13 +1032,7 @@
     \def\tempLabel{sec:ahrsMessageRateDivisor}
     \def\tempDescription
     {
-        \messageRateDivisorDescription
-        {\ac{AHRS}}
-        {400}
-        {200}
-        {133.33}
-        {100}
-        {tab:exampleAhrsrMessageRates}
+        \ac{AHRS} message rate divisor.
     }
     \def\tempKey{ahrsMessageRateDivisor}
     \def\tempType{number}
@@ -1168,13 +1045,7 @@
     \def\tempLabel{sec:highGAccelerometerMessageRateDivisor}
     \def\tempDescription
     {
-        \messageRateDivisorDescription
-        {high-g accelerometer}
-        {1600}
-        {800}
-        {533.33}
-        {400}
-        {tab:exampleHighGAccelerometerMessageRates}
+        High-g accelerometer message rate divisor.
     }
     \def\tempKey{highGAccelerometerMessageRateDivisor}
     \def\tempType{number}
@@ -1187,13 +1058,7 @@
     \def\tempLabel{sec:temperatureMessageRateDivisor}
     \def\tempDescription
     {
-        \messageRateDivisorDescription
-        {temperature}
-        {5}
-        {2.5}
-        {1.67}
-        {1.25}
-        {tab:exampleTemperatureMessageRates}
+        Temperature message rate divisor.
     }
     \def\tempKey{temperatureMessageRateDivisor}
     \def\tempType{number}
@@ -1206,13 +1071,7 @@
     \def\tempLabel{sec:batteryMessageRateDivisor}
     \def\tempDescription
     {
-        \messageRateDivisorDescription
-        {battery}
-        {5}
-        {2.5}
-        {1.67}
-        {1.25}
-        {tab:exampleBatteryMessageRates}
+        Battery message rate divisor.
     }
     \def\tempKey{batteryMessageRateDivisor}
     \def\tempType{number}
@@ -1225,16 +1084,244 @@
     \def\tempLabel{sec:rssiMessageRateDivisor}
     \def\tempDescription
     {
-        \messageRateDivisorDescription
-        {\ac{RSSI}}
-        {1}
-        {0.5}
-        {0.33}
-        {0.25}
-        {tab:exampleRssiMessageRates}
+        \ac{RSSI} message rate divisor.
     }
     \def\tempKey{rssiMessageRateDivisor}
     \def\tempType{number}
     \def\tempDefault{1}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{\acs{FTP} enabled}
+    \def\tempLabel{sec:ftpEnabled}
+    \def\tempDescription
+    {
+        \ac{FTP} enabled.
+    }
+    \def\tempKey{ftpEnabled}
+    \def\tempType{true or false}
+    \def\tempDefault{false}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{\acs{FTP} username}
+    \def\tempLabel{sec:ftpUsername}
+    \def\tempDescription
+    {
+        \ac{FTP} username.
+    }
+    \def\tempKey{ftpUsername}
+    \def\tempType{string}
+    \def\tempDefault{\enquote{}}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Log print level}
+    \def\tempLabel{sec:logPrintLevel}
+    \def\tempDescription
+    {
+        Log print level.
+    }
+    \def\tempKey{logPrintLevel}
+    \def\tempType{number}
+    \def\tempDefault{0}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Log file level}
+    \def\tempLabel{sec:logFileLevel}
+    \def\tempDescription
+    {
+        Log file level.
+    }
+    \def\tempKey{logFileLevel}
+    \def\tempType{number}
+    \def\tempDefault{2}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{\acs{GPS} \acs{RTC} sync enabled}
+    \def\tempLabel{sec:gpsRtcSyncEnabled}
+    \def\tempDescription
+    {
+        \ac{GPS} \ac{RTC} sync enabled.
+    }
+    \def\tempKey{gpsRtcSyncEnabled}
+    \def\tempType{true or false}
+    \def\tempDefault{false}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Accelerometer range}
+    \def\tempLabel{sec:accelerometerRange}
+    \def\tempDescription
+    {
+        Accelerometer range.
+    }
+    \def\tempKey{accelerometerRange}
+    \def\tempType{number}
+    \def\tempDefault{2}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Gyroscope range}
+    \def\tempLabel{sec:gyroscopeRange}
+    \def\tempDescription
+    {
+        Gyroscope range.
+    }
+    \def\tempKey{gyroscopeRange}
+    \def\tempType{number}
+    \def\tempDefault{0}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{\acs{IMU} data rate}
+    \def\tempLabel{sec:imuDataRate}
+    \def\tempDescription
+    {
+        \ac{IMU} data rate.
+    }
+    \def\tempKey{imuDataRate}
+    \def\tempType{number}
+    \def\tempDefault{5}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Magnetometer performance mode}
+    \def\tempLabel{sec:magnetometerPerformanceMode}
+    \def\tempDescription
+    {
+        Magnetometer performance mode.
+    }
+    \def\tempKey{magnetometerPerformanceMode}
+    \def\tempType{number}
+    \def\tempDefault{1}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Magnetometer operation mode}
+    \def\tempLabel{sec:magnetometerOperationMode}
+    \def\tempDescription
+    {
+        Magnetometer operation mode.
+    }
+    \def\tempKey{magnetometerOperationMode}
+    \def\tempType{number}
+    \def\tempDefault{0}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Magnetometer data rate}
+    \def\tempLabel{sec:magnetometerDataRate}
+    \def\tempDescription
+    {
+        Magnetometer data rate.
+    }
+    \def\tempKey{magnetometerDataRate}
+    \def\tempType{number}
+    \def\tempDefault{1}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Magnetometer range}
+    \def\tempLabel{sec:magnetometerRange}
+    \def\tempDescription
+    {
+        Magnetometer range.
+    }
+    \def\tempKey{magnetometerRange}
+    \def\tempType{number}
+    \def\tempDefault{0}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Gauge reset voltage}
+    \def\tempLabel{sec:gaugeResetVoltage}
+    \def\tempDescription
+    {
+        Gauge reset voltage.
+    }
+    \def\tempKey{gaugeResetVoltage}
+    \def\tempType{number}
+    \def\tempDefault{2.5}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Gauge activity threshold}
+    \def\tempLabel{sec:gaugeActivityThreshold}
+    \def\tempDescription
+    {
+        Gauge activity threshold.
+    }
+    \def\tempKey{gaugeActivityThreshold}
+    \def\tempType{number}
+    \def\tempDefault{0.15}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Gauge hibernation threshold}
+    \def\tempLabel{sec:gaugeHibernationThreshold}
+    \def\tempDescription
+    {
+        Gauge hibernation threshold.
+    }
+    \def\tempKey{gaugeHibernationThreshold}
+    \def\tempType{number}
+    \def\tempDefault{0.1}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Gauge alert minimum voltage}
+    \def\tempLabel{sec:gaugeAlertMinimumVoltage}
+    \def\tempDescription
+    {
+        Gauge alert minimum voltage.
+    }
+    \def\tempKey{gaugeAlertMinimumVoltage}
+    \def\tempType{number}
+    \def\tempDefault{3.0}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Gauge alert maximum voltage}
+    \def\tempLabel{sec:gaugeAlertMaximumVoltage}
+    \def\tempDescription
+    {
+        Gauge alert maximum voltage.
+    }
+    \def\tempKey{gaugeAlertMaximumVoltage}
+    \def\tempType{number}
+    \def\tempDefault{4.2}
+    \deviceSetting
+\endgroup
+
+\begingroup
+    \def\tempSection{Fusion update rate}
+    \def\tempLabel{sec:fusionUpdateRate}
+    \def\tempDescription
+    {
+        Fusion update rate.
+    }
+    \def\tempKey{fusionUpdateRate}
+    \def\tempType{number}
+    \def\tempDefault{20}
     \deviceSetting
 \endgroup

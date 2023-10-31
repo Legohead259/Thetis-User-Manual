@@ -443,5 +443,95 @@
         "name": "RSSI message rate divisor",
         "declaration": "uint32_t name",
         "default": "{1}"
+    },
+    {
+        "name": "FTP enabled",
+        "declaration": "bool name",
+        "default": "{false}"
+    },
+    {
+        "name": "FTP username",
+        "declaration": "char name[64]",
+        "default": "{\"\"}"
+    },
+    {
+        "name": "Log print level",
+        "declaration": "uint8_t name",
+        "default": "{0}"
+    },
+    {
+        "name": "Log file level",
+        "declaration": "uint8_t name",
+        "default": "{2}"
+    },
+    {
+        "name": "GPS RTC sync enabled",
+        "declaration": "bool name",
+        "default": "{false}"
+    },
+    {
+        "name": "Accelerometer range",
+        "declaration": "uint8_t name",
+        "default": "{2}"
+    },
+    {
+        "name": "Gyroscope range",
+        "declaration": "uint8_t name",
+        "default": "{0}"
+    },
+    {
+        "name": "IMU data rate",
+        "declaration": "uint8_t name",
+        "default": "{5}"
+    },
+    {
+        "name": "Magnetometer performance mode",
+        "declaration": "uint8_t name",
+        "default": "{1}"
+    },
+    {
+        "name": "Magnetometer operation mode",
+        "declaration": "uint8_t name",
+        "default": "{0}"
+    },
+    {
+        "name": "Magnetometer data rate",
+        "declaration": "uint8_t name",
+        "default": "{1}"
+    },
+    {
+        "name": "Magnetometer range",
+        "declaration": "uint8_t name",
+        "default": "{0}"
+    },
+    {
+        "name": "Gauge reset voltage",
+        "declaration": "float name",
+        "default": "{2.5f}"
+    },
+    {
+        "name": "Gauge activity threshold",
+        "declaration": "float name",
+        "default": "{0.15f}"
+    },
+    {
+        "name": "Gauge hibernation threshold",
+        "declaration": "float name",
+        "default": "{0.1f}"
+    },
+    {
+        "name": "Gauge alert minimum voltage",
+        "declaration": "float name",
+        "default": "{3.0f}"
+    },
+    {
+        "name": "Gauge alert maximum voltage",
+        "declaration": "float name",
+        "default": "{4.2f}"
+    },
+    {
+        "name": "Fusion update rate",
+        "declaration": "uint16_t name",
+        "default": "{20}"
     }
 ]
