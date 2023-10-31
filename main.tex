@@ -25,53 +25,57 @@
 \usepackage[super]{nth}
 \usepackage{sansmath}\sansmath
 \usepackage{amsmath} % bmatrix
-\usepackage{svg}
+% \usepackage{svg}
 \usepackage{macros} % project specific macros
+\usepackage{subcaption}
+
 
 \renewcommand\familydefault{\sfdefault}
+
+\graphicspath{{images/}}  % Location of the graphics files
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\thetitle{} \version\\ \thedate}
 \fancyfoot[R]{\thepage}
 \setlength{\headheight}{29pt} % must be large enough for image
-\rhead{\includesvg[width=1.5cm]{Images/xioLogo.svg}}
+\rhead{\includegraphics[width=1.5cm]{Images/floridatech.png}}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
 
 \renewcommand\labelitemi{\boldmath$\cdot$} % bullet point
 \renewcommand\labelitemii{-} % nested bullet point
 
-\author{x-io Technologies}
-\title{x-IMU3 User Manual}
-\newcommand{\version}{v1.5}
+\author{Braidan Duffy}
+\title{Thetis User Manual}
+\newcommand{\version}{v1.0}
 \date{\today}
 
 \begin{document}
-    \input{titlePage}
+    \input{title_page}
 
     \clearpage
     \tableofcontents
 
     \clearpage
-    \input{Sections/overview}
-    \input{Sections/hardware}
-    \input{Sections/technicalSpecification}
-    \input{Sections/calibration}
-    \input{Sections/powerButton}
-    \input{Sections/led}
-    \input{Sections/dataLogger}
-    \input{Sections/communicationProtocol}
-    \input{Sections/sampleRatesMessageRatesAndTimestamps}
-    \input{Sections/networkAnnouncementMessage}
-    \input{Sections/deviceSettings}
+    \input{sections/overview}
+    \input{sections/hardware}
+    \input{sections/technical_specifications}
+    % \input{sections/calibration}
+    % \input{sections/powerButton}
+    % \input{sections/led}
+    % \input{sections/dataLogger}
+    % \input{sections/communicationProtocol}
+    % \input{sections/sampleRatesMessageRatesAndTimestamps}
+    % \input{sections/networkAnnouncementMessage}
+    % \input{sections/deviceSettings}
 
     \clearpage
     \input{glossary}
 
-    \clearpage
-    \input{documentVersionHistory}
+    % \clearpage
+    % \input{documentVersionHistory}
 
-    \clearpage
-    \input{disclaimer}
+    % \clearpage
+    % \input{disclaimer}
 \end{document}

@@ -1,1 +1,4 @@
 pdf-archive/
+.latexoutput/
+*.bkp
+*.dtmp
