@@ -1,4 +1,4 @@
-\section{Technical specification}
+\section{Technical Specification}
 
 \newcommand{\techincalTable}[5]{
     \customTable
@@ -37,12 +37,12 @@
 
 \subsubsection{Board}
 
-\newcommand{\noteMechanicalDrawings}[1]{A detailed mechanical drawing describing the #1 dimensions and locations of key components is available on the \productWebPage{}.}
+\newcommand{\noteMechanicalDrawings}[1]{A detailed mechanical drawing describing the #1 dimensions and locations of key components is available in the Appendix.}
 
 \characteristicTable
 {
-    Size & 52 $\times$ 32 $\times$ 5 mm & \ref{itm:boardMechanicalSpecification1}\\
-    Weight & 8 g & -\\
+    Size & 1.82 $\times$ 1.74 $\times$ 0.48 in & \ref{itm:boardMechanicalSpecification1}\\
+    Weight & 3.2 g & -\\
 }
 {Board mechanical specification}
 {tab:boardMechanicalSpecification1}
@@ -52,8 +52,8 @@
 
 \characteristicTable
 {
-    Size & 55 $\times$ 50 $\times$ 14 mm & \ref{itm:housingMechanicalSpecification1}\\
-    Weight & 31 g & -\\
+    Size & 3.15 $\times$ 2.36 $\times$ 0.79 in & \ref{itm:housingMechanicalSpecification1}\\
+    Weight & 50 g & -\\
 }
 {Housing mechanical specification}
 {tab:housingMechanicalSpecification1}
@@ -114,33 +114,27 @@
 {
     Range & \textpm{}2000\textdegree{}/s & -\\
     Resolution & 16-bit, 0.061\textdegree{}/s & -\\
-    Sample rate & 400 Hz \textpm{}0.3\% & \ref{itm:gyroscope1}\\
-    Bandwidth & 47 Hz & \ref{itm:gyroscope2}\\
-    Noise & 0.014\textdegree{}/s/$\surd$Hz & -\\
+    Sample rate & 100 Hz \textpm{}0.3\% & \ref{itm:gyroscope1}\\
 }
 {Gyroscope specification}
 {tab:gyroscopeSpecification}
 {
     \item \label{itm:gyroscope1} \noteRate{sample}
-    \item \label{itm:gyroscope2} \noteBandwidth
 }
 
 \subsubsection{Accelerometer}
 
 \characteristicTable
 {
-    Range & \textpm{}24 g & -\\
-    Resolution & 16-bit, 732 \textmugreek{}g & -\\
-    Sample rate & 400 Hz \textpm{}0.3\% & \ref{itm:accelerometer1}\\
-    Bandwidth & 145 Hz & \ref{itm:accelerometer2}\\
-    Noise & 160 \textmugreek{}g/$\surd$Hz (X, Y), 190 \textmugreek{}g/$\surd$Hz (Z) & -\\
+    Range & \textpm{}32 g & -\\
+    Resolution & 16-bit, 488 \textmugreek{}g & -\\
+    Sample rate & 100 Hz \textpm{}0.3\% & \ref{itm:accelerometer1}\\
     Accuracy at 1 g & \textpm{}5 mg & \ref{itm:accelerometer3}, \ref{itm:accelerometer4}\\
 }
 {Accelerometer specification}
 {tab:accelerometerSpecification}
 {
     \item \label{itm:accelerometer1} \noteRate{sample}
-    \item \label{itm:accelerometer2} \noteBandwidth
     \item \label{itm:accelerometer3} \noteAccuracy{accelerometer}{gravity}{horizontal}
     \item \label{itm:accelerometer4} \noteTemperature
 }
@@ -149,54 +143,18 @@
 
 \characteristicTable
 {
-    Range & \textpm{}1300 \textmugreek{}T (X, Y), \textpm{}2500 \textmugreek{}T (Z) & -\\
-    Sample rate & 20 Hz \textpm{}8\% & \ref{itm:magnetometer1}\\
-    Noise & 0.3 \textmugreek{}T & -\\
-    Accuracy at 1 \acs{a.u.} & \textpm{}50 m\acs{a.u.} & \ref{itm:magnetometer2}, \ref{itm:magnetometer3}, \ref{itm:magnetometer4}\\
+    Range & \textpm{}16 Gauss & -\\
+    Sample rate & 80 Hz \textpm{}8\% & \ref{itm:magnetometer1}\\
+    Noise & Unknown & -\\
+    Accuracy at 1 \acs{a.u.} & Unknown & \ref{itm:magnetometer2}, \ref{itm:magnetometer3}, \ref{itm:magnetometer4}\\
 }
 {Magnetometer specification}
 {tab:magnetometerSpecification}
 {
     \item \label{itm:magnetometer1} \noteRate{sample}
-    \item \label{itm:magnetometer2} The calibrated magnetometer units are \ac{a.u.}.  1 \ac{a.u.} is equal to the magnitude of the ambient magnetic field during calibration, approximately 50 \textmugreek{}T.
+    \item \label{itm:magnetometer2} The calibrated magnetometer units are \ac{a.u.}.  1 \ac{a.u.} is equal to the magnitude of the ambient magnetic field during calibration, approximately 45 \textmugreek{}T.
     \item \label{itm:magnetometer3} \noteAccuracy{magnetometer}{the ambient magnetic field}{vertical}
     \item \label{itm:magnetometer4} \noteTemperature
-}
-
-\subsubsection{High-g accelerometer}
-
-\characteristicTable
-{
-    Range & \textpm{}200 g & -\\
-    Resolution & 16-bit, 6.1 mg & -\\
-    Sample rate & 1600 Hz \textpm{}2\% & \ref{itm:highGAccelerometer1}\\
-    Bandwidth & 800 Hz & \ref{itm:highGAccelerometer2}\\
-    Noise & 5 mg/$\surd$Hz & -\\
-    Accuracy at 1 g & \textpm{}150 mg & \ref{itm:highGAccelerometer3}, \ref{itm:highGAccelerometer4}\\
-}
-{High-g accelerometer specification}
-{tab:highGAccelerometerSpecification}
-{
-    \item \label{itm:highGAccelerometer1} \noteRate{sample}
-    \item \label{itm:highGAccelerometer2} \noteBandwidth
-    \item \label{itm:highGAccelerometer3} \noteAccuracy{accelerometer}{gravity}{horizontal}
-    \item \label{itm:highGAccelerometer4} \noteTemperature
-}
-
-\subsubsection{Temperature sensor}
-
-\characteristicTable
-{
-    Range & -104\textdegree{}C to 150\textdegree{}C & \ref{itm:temperatureSensor1}\\
-    Sample rate & 5 Hz \textpm{}0.3\% & \ref{itm:temperatureSensor2}, \ref{itm:temperatureSensor3}\\
-    Accuracy & \textpm{}1\textdegree{}C at 25\textdegree{}C & -\\
-}
-{Temperature sensor specification}
-{tab:temperatureSensor}
-{
-    \item \label{itm:temperatureSensor1} The temperature sensor measurement range exceeds the device operating temperature range.  \seeSection{sec:temperature}
-    \item \label{itm:temperatureSensor2} \noteRate{sample}
-    \item \label{itm:temperatureSensor3} The temperature sensor is oversampled and the result decimated to the specified sample rate.
 }
 
 \subsection{\acs{AHRS}}
@@ -205,7 +163,7 @@
 
 \characteristicTable
 {
-    Update rate & 400 Hz \textpm{}0.3\% & \ref{itm:ahrsUpdateRate1}, \ref{itm:ahrsUpdateRate2}\\
+    Update rate & 64 Hz \textpm{}0.3\% & \ref{itm:ahrsUpdateRate1}, \ref{itm:ahrsUpdateRate2}\\
 }
 {\acs{AHRS} update rate}
 {tab:ahrsUpdateRate}
@@ -232,29 +190,23 @@
 
 \newcommand{\noteBinary}{The data logging capacity is specified for binary data messages.  Capacity will be reduced for \acs{ASCII} data messages.}
 
-\subsubsection{8 GB \acs{microSD}}
+The data logger capacity can be determined with the following equation:
 
-\conditionTable
-{
-    Default message rates & 485 hours & \ref{itm:dataLoggerCapacity8GB1}\\
-    Maximum message rates & 37 hours & \ref{itm:dataLoggerCapacity8GB1}\\
-}
-{Data logger capacity for 8 GB \acs{microSD}}
-{tab:dataLoggerCapacity8GB1}
-{
-    \item \label{itm:dataLoggerCapacity8GB1} \noteBinary
-}
+\begin{equation} \labeq{storage_time}
+    t_{\text{samples}} = \frac{N_{\text{storage}} [\text{Bytes}]}{198 [\text{Bytes}] \times 64 [\text{s}^{-1}] \times 3600 \left[\frac{\text{s}}{\text{h}}\right]}
+\end{equation}
 
-\subsubsection{32 GB \acs{microSD}}
+This yields the following times the data logger can record for with a given \acs{microSD} card size:
 
-\conditionTable
+\customTable
+{l c}
+{Size & Value}
 {
-    Default message rates & 1941 hours & \ref{itm:dataLoggerCapacity32GB1}, \ref{itm:dataLoggerCapacity32GB2}\\
-    Maximum message rates & 149 hours & \ref{itm:dataLoggerCapacity32GB1}, \ref{itm:dataLoggerCapacity32GB2}\\
+    1 GB & 22 hours \\
+    4 GB & 88 hours \\
+    8 GB & 175 hours \\
+    16 GB & 350 hours \\
+    32 GB & 701 hours \\
 }
-{Data logger capacity for 32 GB \acs{microSD}}
-{tab:dataLoggerCapacity32GB1}
-{
-    \item \label{itm:dataLoggerCapacity32GB1} \noteBinary
-    \item \label{itm:dataLoggerCapacity32GB2} The product is supplied with an 8 GB \acs{microSD} that can be upgraded by the user.  The maximum compatible \acs{microSD} capacity is 32 GB.
-}
+{Data logger record times based on capacity of the \acs{microSD} card}
+{tab:data_logger_times}
