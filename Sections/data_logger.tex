@@ -1,0 +1,34 @@
+\section{Data logger}
+\label{sec:dataLogger}
+
+Thetis can function as a stand-alone data logger by streaming real-time data to a file on the \ac{microSD}.
+Files created by the data logger use the .bin extension and can be downloaded from the device to be converted to \ac{CSV} files using the product software.
+
+The data logger will create a new file in the root directory on the \ac{microSD} each time the device boots.
+Files will never be overwritten or deleted by the data logger.
+If the \ac{microSD} becomes full then the data logger will stop and Thetis will indicate an error.
+
+\subsection{Start and stop}
+
+The data logger is started or stopped by the ``Log Enable'' button (\seeSection{sec:buttons}).
+As soon as the button is held for half of a second, the device will immediately begin logging.
+When the operator wishes to stop logging, the ``Log Enable'' button can be held again for another half second or until the ``Activity'' LED and \acs{RGB} \acs{LED} reflect the ``Ready'' state.
+
+\vskip 3em
+
+\warning{The data file is not written to the microSD card filesystem until the device is commanded to stop logging.
+DO NOT reset or power off the device when logging, otherwise the data may not be saved or will be corrupted!}
+
+\subsection{File name}
+\label{sec:fileName}
+
+The file name format is ``log\textunderscore CCC.bin'' where ``CCC'' is a counter.
+The counter runs between ``000'' and ``999''.
+On startup, Thetis scans the microSD card and increments the counter until the next available number is encountered.
+When it exceeds its maximum value, the system will throw a filesystem initialization error.
+Even if the device is powered on, but does not log, a new log file will be created.
+In testing environments, this may lead to multiple empty files that can obscure an actual desired data file.
+
+\subsection{File contents}
+
+The contents of the file is a byte stream as per the communication protocol described in \Fref{sec:communicationProtocol}.
