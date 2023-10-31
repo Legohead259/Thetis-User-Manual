@@ -10,7 +10,7 @@ Accuracy will be reduced for operating temperatures that deviate from this tempe
 \subsection{Inertial sensors}
 \label{sec:inertialSensor}
 
-The inertial sensors are the gyroscope and accelerometer which are packaged within the STdevices LSM6DSO32.
+The inertial sensors are the gyroscope and accelerometer.
 Each inertial sensor is calibrated for axis sensitivity, axis offset, inter-axis misalignment, and package misalignment.
 The inertial calibration model is described by \Fref{eq:inertial} where $\pmb{i}_c$ is the calibrated inertial measurement obtained from the uncalibrated inertial measurement, $\pmb{i}_u$, given the misalignment matrix, $M$, the sensitivity diagonal matrix, $S$, and the offset vector, $\pmb{b}$.
 The inertial calibration model is expanded as \Fref{eq:inertialExpanded} to express the model as 15 scalar quantities.  
@@ -73,7 +73,7 @@ The calibration parameters $W^{-1}$, $\pmb{v}$ can be accessed as device setting
 
 \begin{equation}
     \label{eq:magnetometer}
-    \pmb{m}_c = W^{-1} \pmb{b}_u - \pmb{v}
+    \pmb{m}_c = W^{-1} \pmb{m}_u - \pmb{v}
 \end{equation}
 
 \begin{equation}
