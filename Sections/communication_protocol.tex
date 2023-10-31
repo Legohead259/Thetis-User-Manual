@@ -452,6 +452,63 @@ The magnetometer message provides timestamped magnetometer measurements.  Magnet
     \dataMessageExample
 \endgroup
 
+\subsubsection{Position Message}
+
+The position message provides timestamped \acs{GPS} data from the on-board radio.
+The message are sent once per second and will only be valid or populated when the \acs{GPS} radio has a valid fix.
+The first value of an \ac{ASCII} message is the character \enquote{P} and the arguments are numerical values.
+The first byte of a binary message is 0xD0 (equal to 0x80 + \enquote{P}) and the arguments are several 32-bit longs and a couple 8-bit characters.
+The message argument are described in \Fref{tab:positionMessageArguments}
+
+\begingroup
+    \def\tempArgumentA{GPS fix valid}
+    \def\tempArgumentB{Number of satellites}
+    \def\tempArgumentC{\acs{HDOP}}
+    \def\tempArgumentD{Latitude in microdegrees}
+    \def\tempArgumentE{Longitude in microdegrees}
+    \def\tempArgumentF{Speed in meters per second}
+    \def\tempArgumentG{Course in millidegrees}
+    \def\tempCaption{Position message arguments}
+    \def\tempLabel{tab:positionMessageArguments}
+    \dataMessageTable
+    {Position message arguments}
+    {tab:positionMessageArguments}
+\endgroup
+
+\begingroup
+    \def\tempNameA{GPS fix valid}
+    \def\tempNameB{Number of satellites}
+    \def\tempNameC{\acs{HDOP}}
+    \def\tempNameD{Latitude}
+    \def\tempNameE{Longitude}
+    \def\tempNameF{Speed}
+    \def\tempNameG{Course}
+    \def\tempValueA{1}
+    \def\tempValueB{12}
+    \def\tempValueC{7}
+    \def\tempValueD{280652369}
+    \def\tempValueE{-806229767}
+    \def\tempValueF{0}
+    \def\tempValueG{0}
+    \def\tempAsciiFirst{P}
+    \def\tempAsciiA{1}
+    \def\tempAsciiB{12}
+    \def\tempAsciiC{7}
+    \def\tempAsciiD{280652369}
+    \def\tempAsciiE{-806229767}
+    \def\tempAsciiF{0}
+    \def\tempAsciiG{0}
+    \def\tempBinaryFirst{50}
+    \def\tempBinaryA{01}
+    \def\tempBinaryB{0C}
+    \def\tempBinaryC{07}
+    \def\tempBinaryD{10 BA 6A 51}
+    \def\tempBinaryE{30 0E 17 07}
+    \def\tempBinaryF{00}
+    \def\tempBinaryG{00 00 00 00}
+    \dataMessageExample
+\endgroup
+
 \subsubsection{Quaternion message}
 
 The quaternion message provides timestamped measurements of the orientation of Thetis relative to the Earth.  Quaternion messages are sent continuously at the message rate configured in the device settings.  The first value of an \ac{ASCII} message is the character \enquote{Q} and the arguments are four numerical values expressed to four decimal places.  The first byte of a binary message is 0xD1 (equal to 0x80 + \enquote{Q}) and the arguments are four contiguous 32-bit floats.  The message arguments are described in \Fref{tab:quaternionMessageArguments}.
