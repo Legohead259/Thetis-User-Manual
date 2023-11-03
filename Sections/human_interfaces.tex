@@ -88,7 +88,7 @@ This will populate the position message with reasonably-accurate GPS data.
 
 \begin{figure}[H]
     \centering
-    \subfloat[The \ac{LED} is green for 250 milliseconds]{\includegraphics[width=0.45\textwidth]{LEDs/blue.png} \label{subfig:ready_gps_led_green}} \hskip3ex
+    \subfloat[The \ac{LED} is green for 250 milliseconds]{\includegraphics[width=0.45\textwidth]{LEDs/green.png} \label{subfig:ready_gps_led_green}} \hskip3ex
     \subfloat[Then turns off for 250 milliseconds]{\includegraphics[width=0.45\textwidth]{LEDs/off.png} \label{subfig:ready_gps_led_off}}
     \caption{A blinking green \ac{LED} indicating that Thetis is switched on and ready to log data with a GPS fix}
     \label{fig:ready_gps_led}
@@ -157,6 +157,6 @@ Their locations are highlighted in \Fref{fig:diagnostic_led}
 \begin{description}
     \item[The battery charging \ac{LED}] illuminates orange when the battery is plugged in, \ac{USB} is connected, and the battery is not at 4.2V. The board does not need to be on to charge the battery.
     \item[The activity \ac{LED}] is blue and typically only illuminated when the device is logging. This behavior can be changed in the firmware.   
-    \item[The \ac{GPS} fix \ac{LED}] blinks red once per second when the GPS is acquiring a signal. Once the signal is acquired, it blinks quickly once every 15 seconds.
+    \item[The \acs{GPS} fix \ac{LED}] blinks red once per second when the GPS is acquiring a signal. Once the signal is acquired, it blinks quickly once every 15 seconds.
     \item[The power \ac{LED}] illuminates red when the 3V3 bus on the board is active; nominally when the battery or \ac{USB} is plugged in and the switch turned on.
 \end{description}
